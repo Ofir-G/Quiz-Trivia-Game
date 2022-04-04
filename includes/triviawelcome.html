@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofir's Quiz Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="box">
+
+            <h1 class="heading">Welcome,&nbsp;<span id="name"> </span></h1>
+            <h2 class="heading">That's not me!</h2>
+
+            <h2 class="heading">Choose a Category</h2>
+
+
+            <div class="btn-choices categories">
+                <button name="9" class="btn-choice"><span class="material-icons">psychology</span>General Knowledge</button>
+                <button name="10" class="btn-choice"><span class="material-icons">auto_stories</span>Books</button>
+                <button name="11" class="btn-choice"><span class="material-icons">videocam</span>Film</button>
+                <button name="12" class="btn-choice">
+                    <span class="material-icons">audiotrack</span>
+                    Music</button>
+                <button name="13" class="btn-choice"><span class="material-icons">
+                        theaters
+                    </span>Musicals & Theaters</button>
+                <button name="14" class="btn-choice"><span class="material-icons">
+                        tv
+                    </span>Television</button>
+                <button name="15" class="btn-choice"><span class="material-icons">
+                        live_tv
+                    </span>Video Games</button>
+                <button name="16" class="btn-choice"><span class="material-icons">
+                        casino
+                    </span>Board Games</button>
+                <button name="17" class="btn-choice"><span class="material-icons">
+                        science
+                    </span>Science & Nature</button>
+                <button name="19" class="btn-choice"><span class="material-icons">
+                        computer
+                    </span>Computers</button>
+                <button name="20" class="btn-choice"><span class="material-icons">
+                        calculate
+                    </span>Mathematics</button>
+                <button name="21" class="btn-choice">Mythology</button>
+                <button name="22" class="btn-choice"><span class="material-icons">
+                        sports_soccer
+                    </span>Sports</button>
+                <button name="23" class="btn-choice"><span class="material-icons">
+                        public
+                    </span>Geography</button>
+                <button name="24" class="btn-choice"><span class="material-icons">
+                        history
+                    </span>History</button>
+                <button name="25" class="btn-choice"><span class="material-icons">
+                        gavel
+                    </span>Politics</button>
+                <button name="26" class="btn-choice"><span class="material-icons">
+                        brush
+                    </span>Art</button>
+                <button name="27" class="btn-choice">Celebrities</button>
+                <button name="28" class="btn-choice"><span class="material-icons">
+                        cruelty_free
+                    </span>Animals</button>
+                <button name="29" class="btn-choice"><span class="material-icons">
+                        directions_car_filled
+                    </span>Vehicles</button>
+                <button name="30" class="btn-choice"><span class="material-icons">
+                        watch
+                    </span>Gadgets</button>
+                <button name="31" class="btn-choice">Japanese Anime & Manga</button>
+                <button name="32" class="btn-choice">Cartoon & Animations</button>
+
+                <h2 class="heading">Or Choose All of Them</h2>
+
+                <button name="all" class="btn-choice">ALL</button>
+
+            </div>
+
+            <div class="btn-choices amount">
+               <button name="10" class="btn-choice">10</button>
+               <button name="20" class="btn-choice">20</button>
+               <button name="30" class="btn-choice">30</button>
+               <button name="40" class="btn-choice">40</button>
+               <button name="50" class="btn-choice">50</button>
+               <button name="other" class="btn-choice">Other</button>
+               <button name="random" class="btn-choice">Random</button>
+            </div>
+
+            <div class="btn-choices difficulty">
+                <button name="easy" class="btn-choice">Easy</button>
+                <button name="medium" class="btn-choice">Medium</button>
+                <button name="hard" class="btn-choice">Hard</button>
+                <button name="all" class="btn-choice">All</button>
+             </div>
+
+             <!-- <div class="btn-choices type">
+                <button name="multiple" class="btn-choice">Multiple</button>
+                <button name="boolean" class="btn-choice">True / False</button>
+                <button name="any" class="btn-choice">Any</button>
+             </div> -->
+
+            <button style="display: block; margin: auto;" class="btn-quiz mt-4 mb-3" type="submit">
+                Go
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+
+<script src="../js/index.js"></script>
+<script src="../js/triviawelcome.js"></script>
+
+</html>

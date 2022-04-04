@@ -1,35 +1,23 @@
 const question = document.getElementById("question")
-const choices = document.getElementsByTagName("h3")
+const choices = $(".choice");
 let qNumber = 0;
 let score = 0;
 
-// let allQuestions;
-
-// fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
-//     .then(res => {
-//         return res.json();
-//     })
-
-//     .then(data => {
-
-//         allQuestions = data.results;
-
-//         console.log(allQuestions);
-
-
-//     })
-//     .catch(err => {
-//         console.error(err);
-//     });
-
-
-//     getNewQuestion = () => {
-
-//     }
-
 let questions = [];
+// console.log(localStorage.getItem('name'));
 
-fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
+// $('p').html(localStorage.getItem('name'));
+
+let category = localStorage.getItem("category");
+let difficulty = localStorage.getItem("difficulty");
+// let type = localStorage.getItem("type");
+let amount = localStorage.getItem("amount");
+// console.log(amount);
+// // console.log(type);
+// console.log(difficulty);
+// console.log(category);
+
+fetch(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`)
     .then(res => {
         return res.json();
     })
@@ -79,17 +67,18 @@ getNewQuestion = () => {
 
 };
 
-
-$('h3').click(function(){
+$('h3').click(function () {
     if (this.innerHTML == decodeHtml(questions[qNumber].answer)) {
         this.style.color = 'green';
-        setTimeout(function(){
+        score += 10;
+
+        setTimeout(function () {
             qNumber++;
             getNewQuestion();
-        },3000)
+        }, 2000)
 
     }
-    else{
+    else {
         this.style.color = 'red';
 
     }
@@ -100,37 +89,3 @@ function decodeHtml(html) {
     txt.innerHTML = html;
     return txt.value;
 }
-
-
-// choices.addEventListener('click'), () => {
-//     if (this.innerHTML == questions[qNumber].answer){
-//         this.style.color='green';
-//     }
-// }
-
-// choices.forEach(choice => {
-//     choice.addEventListener('click', () => {
-//         if (this.innerHTML == questions[qNumber].answer) {
-//             this.style.color = 'green';
-//         }
-//     }
-//     )
-// });
-
-
-//   $.ajax({
-//     type: 'get',
-//     url: 'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple',
-//     data: 'json',
-//     success: function (response) {
-//         console.log(response.results)
-//         questions = loadedQuestions.results.map( loadedQuestion => {
-//             const formattedQuestion = {
-//               question: loadedQuestion.question
-//             }
-//         };
-//     },
-//     error: function () {
-//         console.log("error");
-//     }
-// });
