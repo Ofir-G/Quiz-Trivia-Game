@@ -183,3 +183,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.all-cat{
+  display: flex;
+  justify-content: center;
+}

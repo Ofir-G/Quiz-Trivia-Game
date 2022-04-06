@@ -11,3 +11,27 @@
 .incorrect{
     background-color: red;
 }
+
+.user_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.icon{
+    background-color: white;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 50px;
+    padding: inherit;
+}
+
+.progress-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
