@@ -8,23 +8,64 @@
     <title>Ofir's Quiz Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/trivia.css">
+
 </head>
 
 <body>
 
     <div class="container">
         <div class="box">
-            <h1 id="question"></h1>
-            <h3 class="choice" id="choice1"></h3>
-            <h3 class="choice"></h3>
-            <h3 class="choice"></h3>
-            <h3 class="choice"></h3>
-<p></p>
+
+            <div class="loadin d-flex justify-content-center">
+                <div style="width: 3rem; height: 3rem;" class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <div style="height: 100%;" class="game hide">
+                <div style="height: 20%;" class="row header">
+                    <div class="col-4">
+                        <p class="qNum"> Question Number 5/6 </p>
+                    </div>
+                    <div class="col-4">
+
+                        <img style="width: 80%; margin-left: auto; margin-right: auto; display: block;"
+                            src="../images/logo.png" alt="">
+                    </div>
+                    <div class="col-4">
+
+                        <p>player: <span id="name"></span></p>
+                        <p>score</p>
+                        <p>End</p>
+                    </div>
+                    <hr class="line">
+
+                </div>
+                <div style="height: 60%;" class="gameQ">
+                    <div class="row">
+
+                        <h1 id="question"></h1>
+                    </div>
+                    <div style="justify-content: center;" class="row btn-first-2">
+
+                        <button style="width: 30%; height: 70px; margin-right: 4%;" class="choice mt-3 animate__animated"></button>
+                        <button style="width: 30%; height: 70px;" class="choice mt-3 animate__animated"></button>
+                    </div>
+                    <div style="justify-content: center;" class="row btn-last-2">
+
+                        <button style="width: 30%; height: 70px; margin-right: 4%;" class="choice mt-3 animate__animated"></button>
+                        <button style="width: 30%; height: 70px;" class="choice mt-3 animate__animated"></button>
+                    </div>
+                </div>
+                <div style="height: 20%;" class="toolbox row">
+                    <hr class="line">
+                    <h1>Your Help Toolbox</h1>
+                </div>
+            </div>
         </div>
-
-    </div>
-
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -33,7 +74,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 
-<script src="../js/trivia.js" ></script>
+<script src="../js/trivia.js"></script>
 
 
 </html>

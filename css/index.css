@@ -1,6 +1,9 @@
 /* body{
     background-color:;
 } */
+*{
+  box-sizing: border-box;
+}
 
 .box {
   width: 100%;
@@ -115,8 +118,8 @@
 }
 
 .btn-choices{
-  padding-right: 50px;
-  padding-left: 50px;
+  padding-right: 70px;
+  padding-left: 70px;
 
 }
 
@@ -157,4 +160,26 @@
 
 .material-icons{
   margin-right: 5px;
+}
+
+.hide{
+  display: none !important;
+}
+
+.gameQ{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.line{
+  border: 5px solid white;
+  border-radius: 5px;
+  margin: 0px;
+}
+
+.categories{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

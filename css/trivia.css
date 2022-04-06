@@ -1,0 +1,13 @@
+#question{
+    color: white;
+    margin: auto;
+    text-align: center;
+}
+
+.correct{
+    background-color: green;
+}
+
+.incorrect{
+    background-color: red;
+}

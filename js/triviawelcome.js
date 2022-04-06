@@ -19,6 +19,11 @@ $(".amount").find("button").click(function(){
     localStorage.setItem("amount",amount)
 });
 
+$(".categories").addClass("animate__bounceOutLeft");
+
+$(".amount").addClass("animate__bounceInRight");
+$(".difficulty").addClass("animate__bounceInRight");
+
 // $(".type").find("button").click(function(){
 //     chosenType = this.name;
 //     console.log(chosenType);
