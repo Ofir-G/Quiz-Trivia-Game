@@ -259,15 +259,30 @@ $(".fifty").click(function () {
             choice.classList.add("disabled");
         }
     });
-    $(".fifty").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
-    $(".fifty").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+
+    $(".fifty").addClass("animate__tada");
+
+    setTimeout(() => {
+
+        $(".fifty").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+        $(".fifty").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+    }, 800);
+
 });
 
 
 $(".show-answer").click(function () {
+    stopTimer();
     correctAnswer(findAnswer());
-    $(".show-answer").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
-    $(".show-answer").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+
+    $(".show-answer").addClass("animate__tada");
+
+    setTimeout(() => {
+
+        $(".show-answer").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+        $(".show-answer").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+    }, 800);
+
 });
 
 $(".extra-time").click(function () {
@@ -278,8 +293,14 @@ $(".extra-time").click(function () {
     }
 
     timeReset(seconds);
-    $(".extra-time").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
-    $(".extra-time").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+
+    $(".extra-time").addClass("animate__tada");
+
+    setTimeout(() => {
+        $(".extra-time").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+        $(".extra-time").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+    }, 800);
+
 });
 
 function endGame() {
