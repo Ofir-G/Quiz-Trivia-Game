@@ -6,7 +6,8 @@ $("form").submit(function (e) {
 
     e.preventDefault();
 
-    let name = document.getElementById("name").value;
+    let userName = document.getElementById("name").value;
+    userName = userName.toLowerCase();
 
     if (localStorage.getItem("users") === null) {
         local = {
@@ -14,7 +15,7 @@ $("form").submit(function (e) {
             "users":
                 [
                     {
-                        "name": name.toLowerCase(),
+                        "name": userName,
                         "highscore": 0,
                         "allTimeScore": 0
                     }
@@ -25,7 +26,7 @@ $("form").submit(function (e) {
         console.log(local.users[0].name);
 
         localStorage.setItem("users", JSON.stringify(local));
-        localStorage.setItem("currentUser", name.toLowerCase);
+        localStorage.setItem("currentUser", userName);
 
         const items = { ...localStorage };
         console.log(items);
@@ -36,9 +37,8 @@ $("form").submit(function (e) {
         let local = JSON.parse(localStorage.getItem("users"));
 
         local.users.forEach(user => {
-            if (user.name == name.toLowerCase()) {
-                localStorage.setItem("currentUser", name.toLowerCase());
-
+            if (user.name == userName) {
+                localStorage.setItem("currentUser", userName);
             }
             else {
                 local.usersNum += 1;
@@ -47,18 +47,16 @@ $("form").submit(function (e) {
 
                 console.log(usersnum);
 
-                local.users[usersnum - 1] = { "name": name.toLowerCase(), "highScore": 0 }
+                local.users[usersnum - 1] = { "name": userName, "highScore": 0 }
 
                 console.log(local);
 
                 localStorage.setItem("users", JSON.stringify(local));
-
-                localStorage.setItem("currentUser", name.toLowerCase());
+                localStorage.setItem("currentUser", userName);
             }
         });
 
     }
-
     window.location.href = "includes/triviawelcome.html";
 
 });
