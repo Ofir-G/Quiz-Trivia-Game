@@ -1,24 +1,21 @@
-#question{
+#question {
     color: white;
     margin: auto;
     text-align: center;
+    font-family: 'Secular One', sans-serif;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
-.correct{
-    background-color: green;
-}
 
-.incorrect{
-    background-color: red;
-}
 
-.user_data{
+.user_data {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-.icon{
+.icon {
     background-color: white;
     height: 40px;
     display: flex;
@@ -29,9 +26,104 @@
     padding: inherit;
 }
 
-.progress-bar{
+.progress-bar {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+.header {
+    margin: 0;
+    background-color: black;
+}
+
+.row {
+    margin: 0;
+}
+
+.toolbox {
+    background-color: #000000;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.disabled {
+    background-color: gray;
+}
+
+.choice {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 70px;
+    max-height: 110px;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 30%;
+    will-change: transform;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.choice-left {
+    margin-right: 4%;
+}
+
+.choice:disabled {
+    pointer-events: none;
+}
+
+.choice-hover:hover {
+    color: #fff;
+    background-color: black;
+    transform: translateY(-10px);
+}
+
+.choice:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.correct {
+    background-color: #40916c;
+}
+
+.incorrect {
+    background-color: #a22c29;
+}
+
+.plus {
+    text-shadow: 1px 1px 10px #000000;
+}
+
+.timer-warning {
+    background-color: #D4AC2B;
+}
+
+.timer-danger {
+    background-color: #ba181b;
+}
+
+.gameQ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}

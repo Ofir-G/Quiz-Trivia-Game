@@ -1,0 +1,40 @@
+.highscore{
+    background-color: white;
+    height: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+}
+
+.leaderboard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 50%;
+}
+
+.nav-tabs{
+    border: 0px;
+    justify-content: center;
+}
+
+.highscoreTitle{
+    background-color: white;
+    height: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+    align-items: center;
+}

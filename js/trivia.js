@@ -4,28 +4,24 @@ const MAXquestions = localStorage.getItem("amount");
 let qNumber = 0;
 let score = 0;
 let answerChoiceIndex;
-let name = localStorage.getItem("name");
+let name = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 let seconds = 30;
 let width = 100
+let correctCounter = 0;
 
-// START
-// $(".player").html(name);
+startGame();
+
+function startGame() {
+    $(".score").html(score);
+    $(".player").html(name);
+}
 
 let questions = [];
-// console.log(localStorage.getItem('name'));
-
-// $('p').html(localStorage.getItem('name'));
 
 let category = localStorage.getItem("category");
-let difficulty = localStorage.getItem("difficulty");
-// let type = localStorage.getItem("type");
 let amount = localStorage.getItem("amount");
-// console.log(amount);
-// // console.log(type);
-// console.log(difficulty);
-// console.log(category);
 
-console.log(`https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`)
+console.log(`https://opentdb.com/api.php?amount=${amount}&category=${category}`)
 
 fetch(`https://opentdb.com/api.php?amount=10`)
     .then(res => {
@@ -69,6 +65,9 @@ fetch(`https://opentdb.com/api.php?amount=10`)
 
 getNewQuestion = () => {
 
+    $(".currentQ").html(qNumber + 1);
+    $(".maxQ").html(MAXquestions);
+    
     console.log(questions);
 
     $(".choice").removeClass("correct").removeClass("incorrect").removeClass("animate__headShake");
@@ -87,7 +86,8 @@ getNewQuestion = () => {
 
     });
 
-
+    $(".choice").attr("disabled", false);
+    $('.choice').addClass("button-28-hover");
     $(".gameQ").removeClass("animate__bounceOutLeft");
     $(".gameQ").addClass("animate__bounceInRight");
     timeReset();
@@ -95,54 +95,77 @@ getNewQuestion = () => {
 
 
 $('.choice').click(function () {
+
+    $(".choice").attr("disabled", true);
+
     stopTimer();
     if (this.innerHTML == decodeHtml(questions[qNumber].answer)) {
-        this.classList.add("correct");
 
-        setTimeout(function () {
-
-            $(".gameQ").addClass("animate__bounceOutLeft");
-        }, 500)
-
-        setTimeout(function () {
-            scoreUpdate();
-
-            if (qNumber == MAXquestions) {
-                endgame()
-            }
-            else {
-                qNumber++;
-                getNewQuestion();
-            }
-
-        }, 1000)
+        correctAnswer(this);
     }
 
     else {
-        this.classList.add("incorrect");
-        this.classList.add("animate__headShake");
-        stopTimer();
-
-        setTimeout(function () {
-            findAnswer()
-        }, 1000)
-
-        setTimeout(function () {
-            $(".gameQ").addClass("animate__bounceOutLeft");
-        }, 2000)
-
-        setTimeout(function () {
-            if (qNumber == MAXquestions) {
-                endgame()
-            }
-            else {
-                qNumber++;
-                getNewQuestion();
-            }
-        }, 2500)
+        incorrectAnswer(this);
 
     }
 })
+
+
+function correctAnswer(btn) {
+
+    correctCounter++;
+    btn.classList.remove("button-28-hover");
+    btn.classList.add("correct");
+
+    $(".yes").removeClass("hide");
+
+    setTimeout(function () {
+
+        $(".gameQ").addClass("animate__bounceOutLeft");
+        $(".yes").addClass("hide");
+
+    }, 500)
+
+    setTimeout(function () {
+        scoreUpdate();
+
+        if (qNumber == MAXquestions) {
+            endgame()
+        }
+        else {
+            qNumber++;
+            getNewQuestion();
+        }
+
+    }, 1000)
+
+}
+
+function incorrectAnswer(btn) {
+
+    btn.classList.remove("button-28-hover");
+    btn.classList.add("incorrect");
+    btn.classList.add("animate__headShake");
+
+    setTimeout(function () {
+        findAnswer()
+    }, 1000)
+
+    setTimeout(function () {
+        $(".gameQ").addClass("animate__bounceOutLeft");
+    }, 2000)
+
+    setTimeout(function () {
+        if (qNumber == MAXquestions) {
+            endgame()
+        }
+        else {
+            qNumber++;
+            getNewQuestion();
+        }
+    }, 2500)
+
+}
 
 function decodeHtml(html) {
     var txt = document.createElement("textarea");
@@ -167,10 +190,6 @@ scoreUpdate = () => {
 
 }
 
-startGame = () => {
-    $(".score").html(score);
-}
-
 function timerFunc() {
     width -= 3.33;
     seconds -= 1;
@@ -178,10 +197,10 @@ function timerFunc() {
     $(".progress-bar").html('<i style="margin-right: 5px;" class="fa-regular fa-clock"></i>' + seconds);
 
     if (seconds <= 20) {
-        $(".progress-bar").removeClass("bg-success").addClass("bg-warning");
+        $(".progress-bar").removeClass("bg-success").addClass("timer-warning");
     }
     if (seconds <= 10) {
-        $(".progress-bar").removeClass("bg-warning").addClass("bg-danger");
+        $(".progress-bar").removeClass("timer-warning").addClass("timer-danger");
     }
     if (seconds == 0) {
         console.log("STOP");
@@ -203,9 +222,18 @@ function stopTimer() {
 function timeReset() {
     seconds = 30;
     width = 100;
-    $(".progress-bar").removeClass("bg-danger").removeClass("bg-warning").addClass("bg-success");
+    $(".progress-bar").removeClass("timer-danger").removeClass("timer-warning").addClass("bg-success");
     $(".progress-bar").css("width", width + "%");
     $(".progress-bar").html('<i style="margin-right: 5px;" class="fa-regular fa-clock"></i>' + seconds);
     timer = setInterval(timerFunc, 1000);
-
 }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+
+// $('.correctNum').html(correctCounter);
+// var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+
+// myModal.show();
