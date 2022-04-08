@@ -220,10 +220,17 @@ h1 {
 
 }
 
-.disabled-icon{
+.disabled-icon {
     color: gray;
 }
 
-.disabled-icon-inside{
+.disabled-icon-inside {
     color: rgb(92, 91, 91);
+}
+
+.logo {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
