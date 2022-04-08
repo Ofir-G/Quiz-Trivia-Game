@@ -59,6 +59,6 @@ $("form").submit(function (e) {
 
     }
 
-    window.location.href = "../includes/triviawelcome.html";
+    window.location.href = "includes/triviawelcome.html";
 
 });
