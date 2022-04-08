@@ -1,6 +1,6 @@
-let name = capitalizeFirstLetter(localStorage.getItem("currentUser"));
+let userName = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 
-document.getElementById("name").innerHTML = name;
+document.getElementById("name").innerHTML = userName;
 
 $(".categories").find("button").click(function () {
 
@@ -106,7 +106,7 @@ $(".amount").find("button").click(function () {
 // });
 
 $(".btn-quiz").click(function () {
-    window.location.href = "../includes/trivia.html";
+    window.location.href = "trivia.html";
 });
 
 function capitalizeFirstLetter(string) {

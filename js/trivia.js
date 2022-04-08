@@ -4,7 +4,7 @@ let amount = localStorage.getItem("amount");
 let category = localStorage.getItem("category");
 let qNumber = 0;
 let score = 0;
-let name = capitalizeFirstLetter(localStorage.getItem("currentUser"));
+let userName = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 let seconds = 30;
 let width = 100
 let correctCounter = 0;
@@ -16,7 +16,7 @@ startGame();
 function startGame() {
     $(".maxQ").html(amount);
     $(".score").html(score);
-    $(".player").html(name);
+    $(".player").html(userName);
 }
 
 let url = "https://opentdb.com/api.php?";
@@ -313,7 +313,7 @@ function updateHighscore() {
     let local = JSON.parse(localStorage.getItem("users"));
 
     local.users.forEach(user => {
-        if (user.name == name.toLowerCase()) {
+        if (user.name == userName.toLowerCase()) {
             if (score > user.highscore) {
                 user.highscore = score;
             }
