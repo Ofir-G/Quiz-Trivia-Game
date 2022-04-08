@@ -1,7 +1,7 @@
 local = JSON.parse(localStorage.getItem("users"));
 
 highscores = local.users.map(user => {
-    return user.highScore;
+    return user.highscore;
 
 });
 
@@ -12,7 +12,7 @@ let highscoresHTML = $(".highscore");
 
 local.users.forEach(user => {
 
-    if (user.highScore <= highscores[highscores.length - 1]) {
+    if (user.highscore <= highscores[highscores.length - 1]) {
 
     }
 
@@ -22,10 +22,10 @@ highscoresHTML.each((index, div) => {
 
     if (local.users[index] != null) {
 
-        if (local.users[index].highScore <= highscores[highscores.length - 1]) {
+        if (local.users[index].highscore <= highscores[highscores.length - 1]) {
 
-            div.querySelector(".name").innerHTML = local.users[index].name;
-            div.querySelector(".score").innerHTML = local.users[index].highScore;
+            div.querySelector(".name").innerHTML = capitalizeFirstLetter(local.users[index].name);
+            div.querySelector(".score").innerHTML = local.users[index].highscore;
         }
     }
 

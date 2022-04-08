@@ -1,7 +1,7 @@
 .highscore{
     background-color: white;
     height: 40px;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     border-radius: 50px;
@@ -28,7 +28,7 @@
 .highscoreTitle{
     background-color: white;
     height: 40px;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     border-radius: 50px;
@@ -37,4 +37,8 @@
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
+}
+
+.row{
+    text-align: center;
 }

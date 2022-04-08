@@ -83,6 +83,54 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* CSS */
+.button-18 {
+    align-items: center;
+    background-color: #0A66C2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+}
+
+.button-18:hover,
+.button-18:focus {
+    background-color: #16437E;
+    color: #ffffff;
+}
+
+.button-18:active {
+    background: #09223b;
+    color: rgb(255, 255, 255, .7);
+}
+
+.button-18:disabled {
+    cursor: not-allowed;
+    background: rgba(0, 0, 0, .08);
+    color: rgba(0, 0, 0, .3);
+}
+
+
 .choice-left {
     margin-right: 4%;
 }
@@ -126,4 +174,56 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+.summery {
+    text-align: center;
+}
+
+.modal-body {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.disabled {
+    background-color: #495057;
+    color: #353535;
+    box-shadow: none;
+}
+
+.toolbox-icons {
+    justify-content: space-evenly;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.fa-stack:hover .icon-color {
+    color: white;
+    cursor: pointer;
+}
+
+.fa-stack:hover .icon-back {
+    color: #118ab2;
+}
+
+.icon-color {
+    color: black;
+}
+
+/* .icon-color:hover {
+    color: white;
+} */
+
+.icon-back {
+    color: #fff;
+    filter: drop-shadow(0 0 0.75rem #cce3de);
+    transition: color 200ms;
+
+}
+
+.disabled-icon{
+    color: gray;
+}
+
+.disabled-icon-inside{
+    color: rgb(92, 91, 91);
 }

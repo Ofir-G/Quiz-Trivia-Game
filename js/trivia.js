@@ -1,29 +1,34 @@
 const question = document.getElementById("question")
 const choices = $(".choice");
-const MAXquestions = localStorage.getItem("amount");
+let amount = localStorage.getItem("amount");
+let category = localStorage.getItem("category");
 let qNumber = 0;
 let score = 0;
-let answerChoiceIndex;
 let name = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 let seconds = 30;
 let width = 100
 let correctCounter = 0;
+let myModal = new bootstrap.Modal(document.getElementById('end-menu'))
+let questions = [];
 
 startGame();
 
 function startGame() {
+    $(".maxQ").html(amount);
     $(".score").html(score);
     $(".player").html(name);
 }
 
-let questions = [];
+let url = "https://opentdb.com/api.php?";
+url += `amount=${amount}`;
 
-let category = localStorage.getItem("category");
-let amount = localStorage.getItem("amount");
+if (category != "all") {
+    url += `&category=${category}`;
+}
 
-console.log(`https://opentdb.com/api.php?amount=${amount}&category=${category}`)
+console.log(url)
 
-fetch(`https://opentdb.com/api.php?amount=10`)
+fetch(url)
     .then(res => {
         return res.json();
     })
@@ -62,35 +67,42 @@ fetch(`https://opentdb.com/api.php?amount=10`)
         console.error(err);
     });
 
-
 getNewQuestion = () => {
 
-    $(".currentQ").html(qNumber + 1);
-    $(".maxQ").html(MAXquestions);
-    
-    console.log(questions);
+    console.log(qNumber);
+    console.log(amount);
 
-    $(".choice").removeClass("correct").removeClass("incorrect").removeClass("animate__headShake");
-
-    question.innerHTML = questions[qNumber].question;
-
-    if (questions[qNumber].choices.length == 4) {
-        $(".btn-last-2").find("button").removeClass("hide");
+    if (qNumber == amount) {
+        endGame();
     }
     else {
-        $(".btn-last-2").find("button").addClass("hide");
+        $(".currentQ").html(qNumber + 1);
+
+        console.log(questions);
+
+        $(".choice").removeClass("correct").removeClass("incorrect").removeClass("animate__headShake");
+
+        question.innerHTML = questions[qNumber].question;
+
+        if (questions[qNumber].choices.length == 4) {
+            $(".btn-last-2").find("button").removeClass("hide");
+        }
+        else {
+            $(".btn-last-2").find("button").addClass("hide");
+        }
+
+        questions[qNumber].choices.forEach((choice, index) => {
+            choices[index].innerHTML = choice;
+
+        });
+
+        $(".choice").removeClass("disabled");
+        $(".choice").attr("disabled", false);
+        $('.choice').addClass("button-28-hover");
+        $(".gameQ").removeClass("animate__bounceOutLeft");
+        $(".gameQ").addClass("animate__bounceInRight");
+        timeReset();
     }
-
-    questions[qNumber].choices.forEach((choice, index) => {
-        choices[index].innerHTML = choice;
-
-    });
-
-    $(".choice").attr("disabled", false);
-    $('.choice').addClass("button-28-hover");
-    $(".gameQ").removeClass("animate__bounceOutLeft");
-    $(".gameQ").addClass("animate__bounceInRight");
-    timeReset();
 };
 
 
@@ -114,6 +126,7 @@ $('.choice').click(function () {
 function correctAnswer(btn) {
 
     correctCounter++;
+    console.log(btn);
     btn.classList.remove("button-28-hover");
     btn.classList.add("correct");
 
@@ -128,15 +141,8 @@ function correctAnswer(btn) {
 
     setTimeout(function () {
         scoreUpdate();
-
-        if (qNumber == MAXquestions) {
-            endgame()
-        }
-        else {
-            qNumber++;
-            getNewQuestion();
-        }
-
+        qNumber++;
+        getNewQuestion();
     }, 1000)
 
 }
@@ -156,13 +162,8 @@ function incorrectAnswer(btn) {
     }, 2000)
 
     setTimeout(function () {
-        if (qNumber == MAXquestions) {
-            endgame()
-        }
-        else {
-            qNumber++;
-            getNewQuestion();
-        }
+        qNumber++;
+        getNewQuestion();
     }, 2500)
 
 }
@@ -173,14 +174,17 @@ function decodeHtml(html) {
     return txt.value;
 }
 
-findAnswer = () => {
-
-    $.each(choices, function (index, choice) {
+function findAnswer() {
+    let answerChoice;
+    choice = $.each(choices, function (index, choice) {
 
         if (choice.innerHTML == decodeHtml(questions[qNumber].answer)) {
             choice.classList.add("correct");
+            console.log(choice);
+            answerChoice = choice;
         }
     });
+    return answerChoice;
 }
 
 
@@ -219,9 +223,13 @@ function stopTimer() {
     clearInterval(timer);
 }
 
-function timeReset() {
+function timeReset(secondsremain) {
     seconds = 30;
     width = 100;
+    if (secondsremain) {
+        seconds = secondsremain;
+        width = 3.33 * seconds;
+    }
     $(".progress-bar").removeClass("timer-danger").removeClass("timer-warning").addClass("bg-success");
     $(".progress-bar").css("width", width + "%");
     $(".progress-bar").html('<i style="margin-right: 5px;" class="fa-regular fa-clock"></i>' + seconds);
@@ -233,7 +241,74 @@ function capitalizeFirstLetter(string) {
 }
 
 
-// $('.correctNum').html(correctCounter);
-// var myModal = new bootstrap.Modal(document.getElementById('exampleModal'))
+$(".menu").click(function () {
+    window.location.href = "triviawelcome.html";
+});
 
-// myModal.show();
+$(".play-again").click(function () {
+    window.location.href = "trivia.html";
+});
+
+
+$(".fifty").click(function () {
+    let num = 0;
+    $(".choice").each(function (index, choice) {
+
+        if ((choice.innerHTML != decodeHtml(questions[qNumber].answer)) && num <= 1) {
+            num++;
+            choice.classList.add("disabled");
+        }
+    });
+    $(".fifty").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+    $(".fifty").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+});
+
+
+$(".show-answer").click(function () {
+    correctAnswer(findAnswer());
+    $(".show-answer").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+    $(".show-answer").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+});
+
+$(".extra-time").click(function () {
+    stopTimer();
+    seconds += 10;
+    if (seconds > 30) {
+        seconds = 30;
+    }
+
+    timeReset(seconds);
+    $(".extra-time").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
+    $(".extra-time").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
+});
+
+function endGame() {
+    stopTimer();
+    updateHighscore();
+    modal();
+}
+
+function updateHighscore() {
+    let local = JSON.parse(localStorage.getItem("users"));
+
+    local.users.forEach(user => {
+        if (user.name == name.toLowerCase()) {
+            if (score > user.highscore) {
+                user.highscore = score;
+            }
+        }
+    });
+
+    localStorage.setItem("users", JSON.stringify(local));
+}
+
+function modal() {
+    $(".score").html(score);
+    $('.correctNum').html(correctCounter);
+    myModal.show();
+}
+
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})

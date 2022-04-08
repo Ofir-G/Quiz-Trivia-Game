@@ -15,7 +15,7 @@ $("form").submit(function (e) {
                 [
                     {
                         "name": name.toLowerCase(),
-                        "highScore": 0,
+                        "highscore": 0,
                         "allTimeScore": 0
                     }
                 ]
