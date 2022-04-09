@@ -1,5 +1,7 @@
 ## Quiz Site - Trivia
 
+Brought to you by Ofir's Quizzes... :smile:
+
 ### Live Site
 https://ofir-g.github.io/Quiz-Trivia-Game
 
@@ -10,4 +12,4 @@ https://ofir-g.github.io/Quiz-Trivia-Game
 
 ### Technologies / Libraries / frameworks used
 - HTML, CSS, Javascript (jQuery)
-- Bootstrap, Animate.css, Font Awesome Icons, Material Design, Google Fonts
+- Bootstrap, Animate.css, Material Design, Font Awesome Icons, Google Fonts
