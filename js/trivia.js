@@ -25,8 +25,6 @@ function startGame() {
         amount = Math.floor(Math.random() * 50) + 1; 
     }
     
-    amount = 3;
-
     url += `amount=${amount}`;
 
     if (category != "all") {

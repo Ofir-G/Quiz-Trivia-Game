@@ -2,6 +2,10 @@
 // localStorage.clear();
 // const items = { ...localStorage };
 
+// if(localStorage.getItem("currentUser") != null){
+//     window.location.replace("includes/triviawelcome.html");
+// }
+
 let local = JSON.parse(localStorage.getItem("users"));
 console.log(local);
 
