@@ -249,6 +249,10 @@ h1 {
 
 }
 
+.disable-event{
+    pointer-events: none;
+}
+
 .disabled-icon {
     color: gray;
 }

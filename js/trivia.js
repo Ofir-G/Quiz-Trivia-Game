@@ -8,15 +8,18 @@ let userName = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 let seconds = 30;
 let width = 100
 let correctCounter = 0;
-let endModal = new bootstrap.Modal(document.getElementById('end-menu'));
-let sureModal = new bootstrap.Modal(document.getElementById('sure-modal'));
 let questions = [];
 let url = "https://opentdb.com/api.php?";
+
 // Tooltip activate
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
+
+// modals
+let endModal = new bootstrap.Modal(document.getElementById('end-menu'));
+let sureModal = new bootstrap.Modal(document.getElementById('sure-modal'));
 
 startGame();
 
@@ -269,25 +272,22 @@ $(".fifty").click(function () {
             num++;
             choice.classList.add("disabled");
             choice.disabled = true;
-
         }
     });
 
-    $(".fifty").addClass("animate__tada");
+    $(".fifty").addClass("animate__tada").addClass("disable-event");
 
     setTimeout(() => {
 
         $(".fifty").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
         $(".fifty").find(".icon-color").removeClass("icon-color").addClass("disabled-icon-inside");
     }, 800);
-
 });
 
 $(".show-answer").click(function () {
     stopTimer();
     correctAnswer(findAnswer());
-
-    $(".show-answer").addClass("animate__tada");
+    $(".show-answer").addClass("animate__tada").addClass("disable-event");
 
     setTimeout(() => {
 
@@ -306,7 +306,7 @@ $(".extra-time").click(function () {
 
     timeReset(seconds);
 
-    $(".extra-time").addClass("animate__tada");
+    $(".extra-time").addClass("animate__tada").addClass("disable-event");
 
     setTimeout(() => {
         $(".extra-time").find(".icon-back").addClass("disabled-icon").removeClass("icon-back");
