@@ -3,7 +3,6 @@ if(localStorage.getItem("currentUser") != null){
 }
 
 let local = JSON.parse(localStorage.getItem("users"));
-console.log(local);
 
 $("form").submit(function (e) {
 
@@ -31,10 +30,6 @@ $("form").submit(function (e) {
 
         localStorage.setItem("users", JSON.stringify(local));
         localStorage.setItem("currentUser", userName);
-
-        //delete
-        console.log(local);
-
     }
 
     else {
@@ -47,7 +42,6 @@ $("form").submit(function (e) {
                 userFlag = 1;
             }
         });
-        console.log(local);
     }
 
     if (userFlag == 0) {
@@ -62,8 +56,6 @@ $("form").submit(function (e) {
             "correctAnswers": 0,
             "gamesNum": 0
         }
-
-        console.log(local);
 
         localStorage.setItem("users", JSON.stringify(local));
         localStorage.setItem("currentUser", userName);

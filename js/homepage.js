@@ -9,8 +9,6 @@ users.forEach(function (user, index) {
     }
 });
 
-console.log(users);
-
 $(".highest").html(users[userIndex].highscore);
 $(".games").html(users[userIndex].gamesNum);
 $(".correct").html(users[userIndex].correctAnswers);

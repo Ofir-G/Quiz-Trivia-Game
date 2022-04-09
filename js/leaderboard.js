@@ -1,13 +1,10 @@
 local = JSON.parse(localStorage.getItem("users"));
-console.log(local);
 
 users = [...local.users];
 
 highscoresOrdered = users.sort(function (a, b) {
     return b.highscore - a.highscore;
 });
-
-console.log(highscoresOrdered);
 
 let highscoresHTML = $(".highscore");
 

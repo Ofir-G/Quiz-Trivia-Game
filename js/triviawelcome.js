@@ -37,7 +37,6 @@ $(".categories").find("button").click(function () {
     }, 1400)
 
     chosenCategory = this.name;
-    console.log(chosenCategory);
     localStorage.setItem("category", chosenCategory)
 
 
@@ -51,11 +50,9 @@ $(".amount").find("button").click(function () {
     btn_this = this;
 
     chosenAmount = this.name;
-    console.log(chosenAmount);
     chosenCategory = localStorage.getItem("category");
 
     if((chosenCategory == "13" || chosenCategory == "25" || chosenCategory == "30") && chosenAmount > 20){
-        console.log("not good");
         $(".alert").removeClass("hide");
         $(".alert").addClass("animate__fadeIn");
         chosenAmount = 20;

@@ -40,13 +40,6 @@ function startGame() {
     $(".player").html(userName);
 }
 
-function endGame() {
-    stopTimer();
-    updateUserInfo();
-    modal();
-}
-
-console.log(url)
 
 fetch(url)
     .then(res => {
@@ -54,30 +47,23 @@ fetch(url)
     })
 
     .then(loadedQuestions => {
-        console.log(loadedQuestions.results);
 
         questions = loadedQuestions.results.map(loadedQuestion => {
             const formattedQuestion = {
-                //just questions
                 question: loadedQuestion.question
             };
 
-            //just incorrect answers
             const answerChoices = [...loadedQuestion.incorrect_answers];
 
-            //random number from 1 to 3
             random = Math.floor(Math.random() * 3) + 1;
 
             formattedQuestion.answer = loadedQuestion.correct_answer;
-
-            //add to answers the correct answer at random index
             answerChoices.splice(random - 1, 0, loadedQuestion.correct_answer);
 
             formattedQuestion["choices"] = answerChoices;
             return formattedQuestion;
         });
 
-        console.log(questions);
         $(".loadin").addClass("hide");
         $(".game").removeClass("hide");
         getNewQuestion();
@@ -94,8 +80,6 @@ getNewQuestion = () => {
     }
     else {
         $(".currentQ").html(qNumber + 1);
-
-        console.log(questions);
 
         $(".choice").removeClass("correct").removeClass("incorrect").removeClass("animate__headShake");
 
@@ -143,10 +127,9 @@ $('.choice').click(function () {
 function correctAnswer(btn) {
 
     correctCounter++;
-    console.log(btn);
     btn.classList.remove("choice-hover");
     btn.classList.add("correct");
-    correctPlay();
+    correctSoundPlay();
 
     $(".yes").removeClass("hide");
 
@@ -170,7 +153,7 @@ function incorrectAnswer(btn) {
     btn.classList.remove("choice-hover");
     btn.classList.add("incorrect");
     btn.classList.add("animate__headShake");
-    incorrectPlay();
+    incorrectSoundPlay();
 
 
     setTimeout(function () {
@@ -222,11 +205,8 @@ function timerFunc() {
         $(".progress-bar").removeClass("timer-warning").addClass("timer-danger");
     }
     if (seconds == 0) {
-        console.log("STOP");
         stopTimer();
-        console.log(qNumber);
         qNumber++;
-        console.log(qNumber);
         $(".gameQ").addClass("animate__bounceOutLeft");
         setTimeout(function () {
             getNewQuestion();
@@ -315,6 +295,12 @@ $(".extra-time").click(function () {
 
 });
 
+function endGame() {
+    stopTimer();
+    updateUserInfo();
+    endModalFunc();
+}
+
 function updateUserInfo() {
     let local = JSON.parse(localStorage.getItem("users"));
 
@@ -332,27 +318,9 @@ function updateUserInfo() {
     localStorage.setItem("users", JSON.stringify(local));
 }
 
-function updateCorrectAnswers() {
-
-    let local = JSON.parse(localStorage.getItem("users"));
-
-    local.users.forEach(user => {
-        if (user.name == userName.toLowerCase()) {
-            if (score > user.highscore) {
-                user.highscore = score;
-                user.allTimeScore = score;
-            }
-        }
-    });
-
-    localStorage.setItem("users", JSON.stringify(local));
-}
-
-function modal() {
+function endModalFunc() {
 
     percentage = (correctCounter / amount) * 100;
-
-    console.log(percentage);
 
     if (percentage < 50) {
         $(".congratz").html("You'll do better next time &#128526;");
@@ -371,22 +339,20 @@ function modal() {
 }
 
 
-function correctPlay() {
+function correctSoundPlay() {
     correctAudio = document.getElementById("correct-audio");
     correctAudio.play();
 }
 
-function incorrectPlay() {
+function incorrectSoundPlay() {
     incorrectAudio = document.getElementById("incorrect-audio");
     incorrectAudio.play();
 }
 
 $(".turnoff").click(function () {
-    console.log("in turnoff");
     sureModal.show();
 });
 
 $(".sure-yes").click(function () {
-    console.log("in yes");
     endGame();
 });
