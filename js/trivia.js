@@ -331,7 +331,7 @@ function updateUserInfo() {
             }
             user.allTimeScore += score;
             user.correctAnswers += correctCounter;
-            user.gamesNum += correctCounter;
+            user.gamesNum += 1;
         }
     });
 
