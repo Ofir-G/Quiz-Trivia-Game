@@ -39,7 +39,7 @@ a{
 }
 
 .logo {
-    width: 80%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -141,6 +141,7 @@ a{
 
 .welcome {
     font-family: 'Secular One', sans-serif;
+    font-size: 40px;
 }
 
 .all-cat {
