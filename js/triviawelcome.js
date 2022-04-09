@@ -1,4 +1,8 @@
 let userName = capitalizeFirstLetter(localStorage.getItem("currentUser"));
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 
 document.getElementById("name").innerHTML = userName;
 
@@ -84,12 +88,6 @@ $(".amount").find("button").click(function () {
         $(".btn-quiz").removeClass("hide").addClass("animate__animated").addClass("animate__bounceIn");
     }, 1400)
 
-
-
-});
-
-$(".change-user").click(function () {
-    localStorage.removeItem("currentUser");
 });
 
 $(".btn-quiz").click(function () {
@@ -99,3 +97,12 @@ $(".btn-quiz").click(function () {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+$(".back-btn").click(function(){
+    window.location.href = "homepage.html";
+});
+
+$(".logoff-btn").click(function(){
+    localStorage.removeItem("currentUser");
+    window.location.href="../index.html";
+});

@@ -8,9 +8,11 @@ let userName = capitalizeFirstLetter(localStorage.getItem("currentUser"));
 let seconds = 30;
 let width = 100
 let correctCounter = 0;
-let myModal = new bootstrap.Modal(document.getElementById('end-menu'))
+let endModal = new bootstrap.Modal(document.getElementById('end-menu'));
+let sureModal = new bootstrap.Modal(document.getElementById('sure-modal'));
 let questions = [];
 let url = "https://opentdb.com/api.php?";
+// Tooltip activate
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -20,10 +22,10 @@ startGame();
 
 function startGame() {
 
-    if (amount == "random"){
-        amount = Math.floor(Math.random() * 50) + 1; 
+    if (amount == "random") {
+        amount = Math.floor(Math.random() * 50) + 1;
     }
-    
+
     url += `amount=${amount}`;
 
     if (category != "all") {
@@ -263,11 +265,11 @@ $(".fifty").click(function () {
     $(".choice").each(function (index, choice) {
 
         if ((choice.innerHTML != questions[qNumber].answer) && num <= 1) {
-            
+
             num++;
             choice.classList.add("disabled");
             choice.disabled = true;
-            
+
         }
     });
 
@@ -330,7 +332,7 @@ function updateUserInfo() {
     localStorage.setItem("users", JSON.stringify(local));
 }
 
-function updateCorrectAnswers(){
+function updateCorrectAnswers() {
 
     let local = JSON.parse(localStorage.getItem("users"));
 
@@ -348,34 +350,43 @@ function updateCorrectAnswers(){
 
 function modal() {
 
-
     percentage = (correctCounter / amount) * 100;
 
     console.log(percentage);
 
-    if (percentage < 50){
+    if (percentage < 50) {
         $(".congratz").html("You'll do better next time &#128526;");
     }
-    if (percentage >= 50 && percentage < 80){
+    if (percentage >= 50 && percentage < 80) {
         $(".congratz").html("Nice Job! &#128512;");
     }
 
-    if (percentage > 80){
+    if (percentage > 80) {
         $(".congratz").html("Amazing Job! &#128525;");
     }
 
     $(".score").html(score);
     $('.correctNum').html(correctCounter);
-    myModal.show();
+    endModal.show();
 }
 
 
 function correctPlay() {
-    correctAudio = document.getElementById("correct-audio"); 
+    correctAudio = document.getElementById("correct-audio");
     correctAudio.play();
-  }
+}
 
-  function incorrectPlay() {
-    incorrectAudio = document.getElementById("incorrect-audio"); 
+function incorrectPlay() {
+    incorrectAudio = document.getElementById("incorrect-audio");
     incorrectAudio.play();
-  }
+}
+
+$(".turnoff").click(function () {
+    console.log("in turnoff");
+    sureModal.show();
+});
+
+$(".sure-yes").click(function () {
+    console.log("in yes");
+    endGame();
+});

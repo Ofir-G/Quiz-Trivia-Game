@@ -57,6 +57,14 @@
     height: 20%
 }
 
+.btn-danger{
+    background-color: #9e2a2b;
+}
+
+.btn-danger:hover{
+    background-color: #6a040f;
+}
+
 .toolbox-title {
     color: white;
     font-size: large;
@@ -185,7 +193,7 @@ h1 {
     font-family: 'Sora', sans-serif;
 }
 
-.modal-body {
+.end-body {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -210,8 +218,28 @@ h1 {
     color: #118ab2;
 }
 
+.icon-back-off{
+    color: #4a4e69;
+}
+
+.icon-off{
+    color: #000000;
+    transition: color 200ms;
+}
+
+.turnoff-col{
+    display: flex;
+    align-items: center;
+}
+
+.fa-stack:hover .icon-off{
+    color: white;
+    cursor: pointer;
+}
+
 .icon-color {
     color: black;
+    transition: color 200ms;
 }
 
 .icon-back {

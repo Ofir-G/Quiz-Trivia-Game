@@ -21,6 +21,23 @@
     width: auto;
 }
 
+a{
+    text-decoration: none;
+}
+
+.icon-btn{
+    cursor: pointer;
+}
+
+.icon-btn:hover{
+    color: #8d99ae;
+    cursor: pointer;
+}
+
+.icon-color{
+    color: black;
+}
+
 .logo {
     width: 80%;
     margin-left: auto;
@@ -124,12 +141,6 @@
 
 .welcome {
     font-family: 'Secular One', sans-serif;
-}
-
-.change-user {
-    font-family: 'Sora', sans-serif;
-    font-size: 20px;
-    color: #8d99ae;
 }
 
 .all-cat {

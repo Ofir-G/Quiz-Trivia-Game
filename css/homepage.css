@@ -52,6 +52,16 @@
     align-items: center;
 }
 
+.logoff-btn{
+    cursor: pointer;
+}
+
+.logoff-btn:hover{
+    color: #8d99ae;
+    cursor: pointer;
+}
+
+
 .btn-menu {
     align-items: center;
     background-color: #0a9396;

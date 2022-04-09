@@ -22,3 +22,8 @@ $(".trivia").click(function(){
 $(".highscores").click(function(){
     window.location.href = "leaderboard.html";
 });
+
+$(".logoff-btn").click(function(){
+    localStorage.removeItem("currentUser");
+    window.location.href="../index.html";
+});
