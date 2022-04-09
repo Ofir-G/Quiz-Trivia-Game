@@ -14,10 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Secular+One&family=Sora&display=swap"
-        rel="stylesheet">
     <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Roboto&family=Secular+One&family=Sora&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Rubik&family=Secular+One&family=Sora&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/welcometrivia.css">
@@ -32,8 +30,7 @@
         <div class="box">
             <div class="row header header-row">
                 <div class="col-4">
-                    <img style="width: 80%; margin-left: auto; margin-right: auto; display: block;"
-                        src="../images/logo.png" alt="">
+                    <img class="logo" src="../images/logo.png" alt="">
                 </div>
                 <div class="col-4">
                     <h1 class="header welcome">Welcome,&nbsp;<span id="name"> </span></h1>
@@ -41,10 +38,9 @@
                         <h2 class="header change-user">That's not me!</h2>
                     </a>
                 </div>
-                <div class="col-4">
-                </div>
-
+                <div class="col-4"></div>
             </div>
+
             <div class="center">
 
                 <div class="row btn-choices categories animate__animated">
@@ -57,7 +53,7 @@
                     <button name="12" class="btn-choice">
                         <span class="material-icons">audiotrack</span>
                         Music</button>
-                    <button name="13" class="btn-choice"><span class="material-icons">
+                    <button name="13" class="btn-choice"><span class="material-icons"> 
                             theaters
                         </span>Musicals & Theaters</button>
                     <button name="14" class="btn-choice"><span class="material-icons">
@@ -93,7 +89,9 @@
                     <button name="26" class="btn-choice"><span class="material-icons">
                             brush
                         </span>Art</button>
-                    <button name="27" class="btn-choice">Celebrities</button>
+                    <button name="27" class="btn-choice"><span class="material-icons">
+                        remember_me
+                        </span>Celebrities</button>
                     <button name="28" class="btn-choice"><span class="material-icons">
                             cruelty_free
                         </span>Animals</button>
@@ -103,11 +101,17 @@
                     <button name="30" class="btn-choice"><span class="material-icons">
                             watch
                         </span>Gadgets</button>
-                    <button name="31" class="btn-choice">Japanese Anime & Manga</button>
-                    <button name="32" class="btn-choice">Cartoon & Animations</button>
+                    <button name="31" class="btn-choice"><span class="material-icons">
+                        auto_awesome
+                        </span></i>Japanese Anime & Manga</button>
+                    <button name="32" class="btn-choice"><i class="fa-solid fa-dragon fa-lg material-icons"></i> Cartoon & Animations</button>
 
                     <div class="all-cat">
-                        <button name="all" class="btn-choice">ALL</button>
+                        <button name="all" class="btn-choice"><span class="material-icons">
+                            chevron_left
+                            </span>ALL<span class="material-icons">
+                            navigate_next
+                            </span></button>
                     </div>
 
                 </div>
@@ -119,34 +123,25 @@
                     <button name="30" class="btn-choice">30</button>
                     <button name="40" class="btn-choice">40</button>
                     <button name="50" class="btn-choice">50</button>
-                    <button name="other" class="btn-choice">Other</button>
                     <button name="random" class="btn-choice">Random</button>
                 </div>
 
                 <div class="row go">
+
+                      <div class="alert alert-warning alert-dismissible fade" role="alert">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                          </svg>
+                        The category you chose does not have more than 20 questions. We modifies your game to 20 questions.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                      </div>
+
                     <button class="btn-quiz mt-4 mb-3 hide" type="submit">
-                        Stat a Game <i class="fa-solid fa-arrow-right"></i>
+                        Start a Game <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
-
-            <!-- <div class="btn-choices difficulty animate__animated hide">
-                <button name="easy" class="btn-choice">Easy</button>
-                <button name="medium" class="btn-choice">Medium</button>
-                <button name="hard" class="btn-choice">Hard</button>
-                <button name="all" class="btn-choice">All</button>
-            </div> -->
-
-            <!-- <div class="btn-choices type">
-                <button name="multiple" class="btn-choice">Multiple</button>
-                <button name="boolean" class="btn-choice">True / False</button>
-                <button name="any" class="btn-choice">Any</button>
-             </div> -->
-
-
-
         </div>
-
     </div>
 
 </body>
@@ -157,8 +152,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 
-<script src="../js/index.js"></script>
-<script src="../js/triviawelcome.js"></script>
 <script src="../js/redirect.js"></script>
+<script src="../js/triviawelcome.js"></script>
 
 </html>

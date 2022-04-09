@@ -1,3 +1,4 @@
+//delete
 // localStorage.clear();
 const items = { ...localStorage };
 console.log(items);
@@ -28,6 +29,7 @@ $("form").submit(function (e) {
         localStorage.setItem("users", JSON.stringify(local));
         localStorage.setItem("currentUser", userName);
 
+        //delete
         const items = { ...localStorage };
         console.log(items);
     }
@@ -58,5 +60,4 @@ $("form").submit(function (e) {
 
     }
     window.location.href = "includes/triviawelcome.html";
-
 });

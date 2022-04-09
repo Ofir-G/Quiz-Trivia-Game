@@ -46,6 +46,17 @@ $(".amount").find("button").click(function () {
     $(".amount").find("button").not(this).addClass("animate__animated").addClass("animate__bounceOutLeft");
     btn_this = this;
 
+    chosenAmount = this.name;
+    console.log(chosenAmount);
+
+    if((localStorage.getItem("category") == "13" || "25" || "30") && chosenAmount > 20){
+        console.log("not good");
+        $(".alert").addClass("show");
+        chosenAmount = 20;
+    }
+
+    localStorage.setItem("amount", chosenAmount)
+
     setTimeout(function () {
     }, 1000)
 
@@ -71,39 +82,13 @@ $(".amount").find("button").click(function () {
         $(".btn-quiz").removeClass("hide").addClass("animate__animated").addClass("animate__bounceIn");
     }, 1400)
 
-    chosenAmount = this.name;
-    console.log(chosenAmount);
-    localStorage.setItem("amount", chosenAmount)
+
 
 });
-
 
 $(".change-user").click(function () {
     localStorage.removeItem("currentUser");
 });
-
-$(".difficulty").find("button").click(function () {
-    chosenDifficulty = this.name;
-    console.log(chosenDifficulty);
-    localStorage.setItem("difficulty", chosenDifficulty)
-});
-
-$(".amount").find("button").click(function () {
-    amount = this.name;
-    console.log(amount);
-    localStorage.setItem("amount", amount)
-});
-
-
-
-
-// $(".difficulty").addClass("animate__bounceInRight");
-
-// $(".type").find("button").click(function(){
-//     chosenType = this.name;
-//     console.log(chosenType);
-//     localStorage.setItem("type",chosenType)
-// });
 
 $(".btn-quiz").click(function () {
     window.location.href = "trivia.html";

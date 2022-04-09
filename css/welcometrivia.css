@@ -10,9 +10,7 @@
     font-family: "Google Sans", Roboto, Arial, sans-serif;
     justify-content: center;
     letter-spacing: .25px;
-    line-height: normal;
     padding: 2px 24px;
-    text-align: center;
     margin-top: 10px;
     margin-right: 10px;
     transition: all 400ms ease-in-out;
@@ -23,7 +21,14 @@
     width: auto;
 }
 
-.row{
+.logo {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.row {
     margin: 0;
 }
 
@@ -40,30 +45,12 @@
     color: white;
 }
 
-/* .btn-choice:focus {
-    background: black;
-    color: white;
-    width: 300px;
-    height: 63px;
-    font-size: large;
-} */
-
 .btn-choice:visited {
     background: black;
     color: white;
     width: 300px;
     height: 63px;
     font-size: large;
-
-}
-
-.btn-choice:checked {
-    background: black;
-    color: white;
-    width: 300px;
-    height: 63px;
-    font-size: large;
-
 }
 
 .btn-choices {
@@ -95,7 +82,7 @@
     box-sizing: border-box;
     color: #ffffff;
     display: inline-flex;
-    font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: 'Maven Pro', sans-serif;
     font-size: 50px;
     height: 100px;
     font-weight: 600;
@@ -107,7 +94,12 @@
     overflow: hidden;
     text-align: center;
     box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
+  
+  .btn-quiz:hover {
+    background-color: #13777a;
+  }
 
 
 .center {
@@ -175,7 +167,11 @@
 
 .fa-arrow-right {
     -webkit-animation: arrow-jump 1s infinite;
-    -moz-animation: arrow-jump 1s infinite; 
+    -moz-animation: arrow-jump 1s infinite;
     -o-animation: arrow-jump 1s infinite;
     animation: arrow-jump 1s infinite;
+}
+
+.alert-warning{
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
 }

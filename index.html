@@ -11,8 +11,13 @@
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Secular+One&family=Sora&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
@@ -21,22 +26,23 @@
     <div class="container">
         <div class="box">
 
-                <img style="width: 50%; margin-left: auto; margin-right: auto; display: block;" src="images/logo.png" alt="">
-                <div style="margin: auto;" class="col-md-4 mb-3 mt-3">
-                    <form>
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name"
-                                pattern="[A-Za-z]{1,10}" required>
-                            <label for="name">Enter your name</label>
-                        </div>
+            <img class="logo" src="images/logo.png" alt="logo">
+            <div class="form col-md-4 mb-3 mt-3">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name"
+                            pattern="[A-Za-z]{1,15}" maxlength="15" required title="Only up to 15 letters, no spaces"
+                            ria-describedby="nameHelp">
+                        <label for="name">Enter your name</label>
+                        <div id="nameHelp" class="form-text">Only letters, no spaces.</div>
+                    </div>
 
-                        <button style="display: block; margin: auto;"
-                            class="btn-quiz mt-4 mb-3" type="submit">
-                            GO
-                        </button>
+                    <button class="btn-quiz mt-4 mb-3" type="submit">
+                        GO
+                    </button>
 
-                    </form>
-                </div>
+                </form>
+            </div>
 
         </div>
 

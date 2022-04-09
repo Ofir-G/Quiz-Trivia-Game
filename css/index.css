@@ -1,68 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Secular+One&family=Sora&display=swap');
 
 .btn-quiz {
-  align-items: center;
   background-color: #0a9396;
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
   color: #ffffff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 50px;
   width: 200px;
   height: 100px;
   font-weight: 600;
-  justify-content: center;
-  line-height: 20px;
-  max-width: 480px;
-  min-height: 40px;
-  min-width: 0px;
-  overflow: hidden;
-  padding: 0px;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-align: center;
-  touch-action: manipulation;
-  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  display: block;
+  margin: auto;
+  font-family: 'Maven Pro', sans-serif;
 }
 
-.btn-quiz:hover,
-.btn-quiz:focus {
-  background-color: #16437E;
-  color: #ffffff;
+.btn-quiz:hover {
+  background-color: #13777a;
 }
 
-.btn-quiz:active {
-  background: #09223b;
-  color: rgb(255, 255, 255, .7);
-}
-
-.btn-quiz:disabled {
-  cursor: not-allowed;
-  background: rgba(0, 0, 0, .08);
-  color: rgba(0, 0, 0, .3);
-}
-
-.material-icons{
-  margin-right: 5px;
-}
-
-.all-cat{
-  display: flex;
-  justify-content: center;
-}
-
-/* .header{
-  height: 20%;
-  align-items: center;
-} */
-
-.form-control:focus, .form-control:hover{
+.form-control:focus,
+.form-control:hover {
   border: none;
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.logo {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.form{
+  margin: auto;
+}
+
+#nameHelp{
+ color: white;
 }

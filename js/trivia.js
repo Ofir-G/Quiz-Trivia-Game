@@ -1,5 +1,6 @@
-const question = document.getElementById("question")
-const choices = $(".choice");
+
+let question = document.getElementById("question")
+let choices = $(".choice");
 let amount = localStorage.getItem("amount");
 let category = localStorage.getItem("category");
 let qNumber = 0;
@@ -10,20 +11,37 @@ let width = 100
 let correctCounter = 0;
 let myModal = new bootstrap.Modal(document.getElementById('end-menu'))
 let questions = [];
+let url = "https://opentdb.com/api.php?";
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
 
 startGame();
 
 function startGame() {
+
+    if (amount == "random"){
+        amount = Math.floor(Math.random() * 50) + 1; 
+    }
+    
+    amount = 3;
+    url += `amount=${amount}`;
+
+    if (category != "all") {
+        url += `&category=${category}`;
+    }
+
     $(".maxQ").html(amount);
     $(".score").html(score);
     $(".player").html(userName);
 }
 
-let url = "https://opentdb.com/api.php?";
-url += `amount=${amount}`;
-
-if (category != "all") {
-    url += `&category=${category}`;
+function endGame() {
+    stopTimer();
+    updateHighscore();
+    modal();
 }
 
 console.log(url)
@@ -249,7 +267,6 @@ $(".play-again").click(function () {
     window.location.href = "trivia.html";
 });
 
-
 $(".fifty").click(function () {
     let num = 0;
     $(".choice").each(function (index, choice) {
@@ -257,6 +274,8 @@ $(".fifty").click(function () {
         if ((choice.innerHTML != decodeHtml(questions[qNumber].answer)) && num <= 1) {
             num++;
             choice.classList.add("disabled");
+            choice.disabled = true;
+            
         }
     });
 
@@ -303,12 +322,6 @@ $(".extra-time").click(function () {
 
 });
 
-function endGame() {
-    stopTimer();
-    updateHighscore();
-    modal();
-}
-
 function updateHighscore() {
     let local = JSON.parse(localStorage.getItem("users"));
 
@@ -324,12 +337,25 @@ function updateHighscore() {
 }
 
 function modal() {
+
+
+    percentage = (correctCounter / amount) * 100;
+
+    console.log(percentage);
+
+    if (percentage < 50){
+        $(".congratz").html("You'll do better next time &#128526;");
+    }
+    if (percentage > 50 && percentage < 80){
+        $(".congratz").html("Nice Job! &#128512;");
+    }
+
+    if (percentage > 80){
+        $(".congratz").html("Amazing Job! &#128525;");
+    }
+
     $(".score").html(score);
     $('.correctNum').html(correctCounter);
     myModal.show();
 }
 
-var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-})
