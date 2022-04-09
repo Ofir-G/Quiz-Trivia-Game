@@ -23,7 +23,7 @@ $("form").submit(function (e) {
                     {
                         "name": userName,
                         "highscore": 0,
-                        "correctAnswers":0,
+                        "correctAnswers": 0,
                         "gamesNum": 0
                     }
                 ]
@@ -55,7 +55,13 @@ $("form").submit(function (e) {
 
         usersnum = local.usersNum;
 
-        local.users[usersnum - 1] = { "name": userName, "highscore": 0, "allTimeScore": 0 }
+        local.users[usersnum - 1] = {
+            "name": userName,
+            "highscore": 0,
+            "allTimeScore": 0,
+            "correctAnswers": 0,
+            "gamesNum": 0
+        }
 
         console.log(local);
 
