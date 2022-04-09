@@ -1,4 +1,3 @@
-
 let question = document.getElementById("question")
 let choices = $(".choice");
 let amount = localStorage.getItem("amount");
@@ -26,7 +25,6 @@ function startGame() {
         amount = Math.floor(Math.random() * 50) + 1; 
     }
     
-    amount = 3;
     url += `amount=${amount}`;
 
     if (category != "all") {
