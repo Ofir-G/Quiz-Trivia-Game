@@ -1,11 +1,13 @@
-## Quizz Site - Trivia
+## Quiz Site - Trivia
 
 ### Live Site
 https://ofir-g.github.io/Quiz-Trivia-Game
 
-Based on Open Trivia DB API.
+### About
+- Web trivia game based on OpenTDB[https://opentdb.com] API.
+- **Not responsive** at this point - only desktop. Checked on Chrome & Firefox.
+- No backend, just use of local browser storage.
 
-### Technologies / Libraries used
+### Technologies / Libraries / frameworks used
 - HTML, CSS, Javascript (jQuery)
-- Bootstrap, Font Awesome Icons, Material Design, Google Fonts
-- API integration
+- Bootstrap, Animate.css, Font Awesome Icons, Material Design, Google Fonts
