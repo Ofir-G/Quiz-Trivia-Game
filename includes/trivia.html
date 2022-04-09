@@ -76,10 +76,22 @@
                     </div>
 
                     <!-- score and name -->
-                    <div class="col-3 user_data">
+                    <div class="col-4 user_data">
                         <div class="icon">
-                            <i class="fa-solid fa-user-large fa-xl"></i>
-                            <span class="player progress-num"></span>
+                            <div class="col-11">
+                                <i class="fa-solid fa-user-large fa-xl"></i>
+                                <span class="player progress-num"></span>
+                            </div>
+                            <div>
+                                <!-- endgame -->
+                                <div>
+                                    <span class="fa-stack turnoff" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="End Game">
+                                        <i class="fa-solid fa-circle fa-stack-2x icon-back-off"></i>
+                                        <i class="fa-solid fa-power-off fa-stack-1x fa-inverse icon-off"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="icon">
@@ -89,7 +101,7 @@
                         </div>
                     </div>
 
-                    <!-- endgame -->
+                    <!-- endgame
                     <div class="col-1 turnoff-col">
                         <span class="fa-stack fa-2x turnoff" data-bs-toggle="tooltip" data-bs-placement="top"
                             title="End Game">
@@ -97,7 +109,7 @@
                             <i class="fa-solid fa-power-off fa-stack-1x fa-inverse icon-off"></i>
                         </span>
 
-                    </div>
+                    </div> -->
                 </div>
 
                 <!-- game questions -->
@@ -175,7 +187,8 @@
 
             <!-- Are you sure modal -->
 
-            <div class="modal fade" tabindex="-1" id="sure-modal" tabindex="-1" aria-labelledby="surelabel" aria-hidden="true">
+            <div class="modal fade" tabindex="-1" id="sure-modal" tabindex="-1" aria-labelledby="surelabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">

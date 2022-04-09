@@ -227,11 +227,6 @@ h1 {
     transition: color 200ms;
 }
 
-.turnoff-col{
-    display: flex;
-    align-items: center;
-}
-
 .fa-stack:hover .icon-off{
     color: white;
     cursor: pointer;
