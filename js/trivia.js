@@ -84,9 +84,6 @@ fetch(url)
 
 getNewQuestion = () => {
 
-    console.log(qNumber);
-    console.log(amount);
-
     if (qNumber == amount) {
         endGame();
     }
@@ -126,7 +123,7 @@ $('.choice').click(function () {
     $(".choice").attr("disabled", true);
 
     stopTimer();
-    if (this.innerHTML == decodeHtml(questions[qNumber].answer)) {
+    if (this.innerHTML == questions[qNumber].answer) {
 
         correctAnswer(this);
     }
@@ -186,22 +183,17 @@ function incorrectAnswer(btn) {
 
 }
 
-function decodeHtml(html) {
-    var txt = document.createElement("textarea");
-    txt.innerHTML = html;
-    return txt.value;
-}
-
 function findAnswer() {
     let answerChoice;
     choice = $.each(choices, function (index, choice) {
 
-        if (choice.innerHTML == decodeHtml(questions[qNumber].answer)) {
+        if (choice.innerHTML == questions[qNumber].answer) {
+
             choice.classList.add("correct");
-            console.log(choice);
             answerChoice = choice;
         }
     });
+
     return answerChoice;
 }
 
@@ -270,7 +262,8 @@ $(".fifty").click(function () {
     let num = 0;
     $(".choice").each(function (index, choice) {
 
-        if ((choice.innerHTML != decodeHtml(questions[qNumber].answer)) && num <= 1) {
+        if ((choice.innerHTML != questions[qNumber].answer) && num <= 1) {
+            
             num++;
             choice.classList.add("disabled");
             choice.disabled = true;
@@ -287,7 +280,6 @@ $(".fifty").click(function () {
     }, 800);
 
 });
-
 
 $(".show-answer").click(function () {
     stopTimer();
