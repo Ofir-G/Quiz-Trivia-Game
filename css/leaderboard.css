@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Rubik&family=Secular+One&family=Sora:wght@400;600&family=Titillium+Web:wght@700&display=swap');
+
 .highscore{
     background-color: white;
     height: 40px;
@@ -10,6 +12,11 @@
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
+    font-family: 'Sora', sans-serif;
+}
+
+.highscore:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .leaderboard{
@@ -25,6 +32,11 @@
     justify-content: center;
 }
 
+.nav-item{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
 .highscoreTitle{
     background-color: white;
     height: 40px;
@@ -37,7 +49,11 @@
     padding-left: 30px;
     padding-right: 30px;
     align-items: center;
+    font-family: 'Titillium Web', sans-serif;    
+    font-size: larger;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+
 
 .row{
     text-align: center;

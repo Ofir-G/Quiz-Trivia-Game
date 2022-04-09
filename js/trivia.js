@@ -25,6 +25,8 @@ function startGame() {
         amount = Math.floor(Math.random() * 50) + 1; 
     }
     
+    amount = 3;
+
     url += `amount=${amount}`;
 
     if (category != "all") {
@@ -344,7 +346,7 @@ function modal() {
     if (percentage < 50){
         $(".congratz").html("You'll do better next time &#128526;");
     }
-    if (percentage > 50 && percentage < 80){
+    if (percentage >= 50 && percentage < 80){
         $(".congratz").html("Nice Job! &#128512;");
     }
 

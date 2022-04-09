@@ -1,37 +1,27 @@
 local = JSON.parse(localStorage.getItem("users"));
+console.log(local);
 
-highscores = local.users.map(user => {
-    return user.highscore;
+users = [...local.users];
 
+highscoresOrdered = users.sort(function (a, b) {
+    return b.highscore - a.highscore;
 });
 
-highscores = highscores.sort(function (a, b) { return a - b; });
-highscores = highscores.slice(Math.max(highscores.length - 5, 0))
+console.log(highscoresOrdered);
 
 let highscoresHTML = $(".highscore");
-
-local.users.forEach(user => {
-
-    if (user.highscore <= highscores[highscores.length - 1]) {
-
-    }
-
-});
 
 highscoresHTML.each((index, div) => {
 
     if (local.users[index] != null) {
 
-        if (local.users[index].highscore <= highscores[highscores.length - 1]) {
-
-            div.querySelector(".name").innerHTML = capitalizeFirstLetter(local.users[index].name);
-            div.querySelector(".score").innerHTML = local.users[index].highscore;
-        }
+        div.querySelector(".name").innerHTML = capitalizeFirstLetter(highscoresOrdered[index].name);
+        div.querySelector(".score").innerHTML = highscoresOrdered[index].highscore;
     }
-
 });
-
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+var json = '{"3":"Apple", "2":"Banana", "1":"Orange"}';
