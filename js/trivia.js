@@ -16,7 +16,6 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl)
 })
 
-
 startGame();
 
 function startGame() {
@@ -38,7 +37,7 @@ function startGame() {
 
 function endGame() {
     stopTimer();
-    updateHighscore();
+    updateUserInfo();
     modal();
 }
 
@@ -320,13 +319,32 @@ $(".extra-time").click(function () {
 
 });
 
-function updateHighscore() {
+function updateUserInfo() {
     let local = JSON.parse(localStorage.getItem("users"));
 
     local.users.forEach(user => {
         if (user.name == userName.toLowerCase()) {
             if (score > user.highscore) {
                 user.highscore = score;
+            }
+            user.allTimeScore += score;
+            user.correctAnswers += correctCounter;
+            user.gamesNum += correctCounter;
+        }
+    });
+
+    localStorage.setItem("users", JSON.stringify(local));
+}
+
+function updateCorrectAnswers(){
+
+    let local = JSON.parse(localStorage.getItem("users"));
+
+    local.users.forEach(user => {
+        if (user.name == userName.toLowerCase()) {
+            if (score > user.highscore) {
+                user.highscore = score;
+                user.allTimeScore = score;
             }
         }
     });

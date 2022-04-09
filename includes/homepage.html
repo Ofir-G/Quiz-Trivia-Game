@@ -19,7 +19,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/welcometrivia.css">
-    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/homepage.css">
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
 
 </head>
@@ -43,38 +43,73 @@
             </div>
 
             <div class="center">
-                <div style="height: 50%; align-items: center; justify-content: center;" class="row">
-                    <div style="height: 80%; width: 90%;" class="profile-box col-12">
-                        <div style="height: 100%;" class="row">
-                            <div style="height: 100%;" class="col-4">
-                                <img style="height: 100%;" src="../images/user.png" alt="">
-                            </div>
-                            <div class="col-4">
-                                <span style="font-size: 48px;" class="material-icons">
-                                    emoji_events
-                                </span>
+                <div class="row user-info">
+                    <div class="profile-box col-12">
 
-                                <span style="font-size: 48px;" class="material-icons">
-                                    check_circle
-                                </span>
-                                <span style="font-size: 48px;" class="material-icons">
-                                    casino
-                                </span>
+                        <div class="row height">
+                            <div class="col-6 height user-pic">
+
+                                <img class="height" src="../images/user.png" alt="">
                             </div>
 
+                            <div class="col-6 user-stats">
 
+                                <div class="stats row">
+                                    <div class="col-3">
+                                        <span class="material-icons">
+                                            emoji_events
+                                        </span>
+                                    </div>
+                                    <div class="col-9">
+                                        <p><span class="highest"></span> Highest Score</p>
+                                    </div>
 
+                                </div>
+
+                                <div class="stats row">
+
+                                    <div class="col-3">
+                                        <span class="material-icons">
+                                            check_circle
+                                        </span>
+                                    </div>
+                                    <div class="col-9">
+                                        <p><span class="correct"></span> Correct Answers</p>
+                                    </div>
+
+                                </div>
+
+                                <div class="stats row">
+                                    <div class="col-3">
+
+                                        <span class="material-icons">
+                                            casino
+                                        </span>
+                                    </div>
+                                    <div class="col-9">
+                                        <p><span class="games"></span> Games Played</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div style="height: 50%;" class="row">
-                    <div class="profile-box col-4"></div>
-                    <div class="profile-box col-4"></div>
-                    <div class="profile-box col-4"></div>
+                <div class="row menu">
+                    <button class="btn-menu trivia mt-4 mb-3" type="submit">
+                        Trivia Game
+                    </button>
+
+                    <button class="btn-menu highscores mt-4 mb-3" type="submit">
+                        Highscores
+                    </button>
                 </div>
+
             </div>
         </div>
+    </div>
     </div>
 
 </body>
@@ -87,5 +122,6 @@
 
 <script src="../js/redirect.js"></script>
 <script src="../js/triviawelcome.js"></script>
+<script src="../js/homepage.js"></script>
 
 </html>

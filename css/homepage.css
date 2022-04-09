@@ -1,0 +1,108 @@
+.profile-box {
+    background-color: white;
+    border-radius: 50px;
+    height: 80%;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.height {
+    height: 100%;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.material-icons {
+    font-size: 48px;
+}
+
+.user-pic{
+    display: flex;
+    justify-content: center;
+}
+
+.stats {
+    align-items: end;
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-menu {
+    align-items: center;
+    background-color: #0a9396;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: inline-flex;
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 40px;
+    height: 80px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.btn-menu:hover {
+    background-color: #13777a;
+}
+
+.center {
+    justify-content: start;
+}
+
+.stats {
+    font-family: 'Sora', sans-serif;
+}
+
+.user-info {
+    height: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* 
+.buy-info{
+    text-align: center;
+    margin: 0;
+}
+
+.toolbox-icons{
+    justify-content: center;
+}
+
+.icon-back {
+    color: #118ab2;
+    filter: drop-shadow(0 0 0.5rem #000000);
+    transition: color 200ms;
+}
+
+.icon-color {
+    color: black;
+}
+
+.disabled {
+    background-color: #495057;
+    color: #353535;
+    box-shadow: none;
+}
+
+.disabled-icon-inside {
+    color: rgb(92, 91, 91);
+} */

@@ -1,10 +1,6 @@
-//delete
-// localStorage.clear();
-// const items = { ...localStorage };
-
-// if(localStorage.getItem("currentUser") != null){
-//     window.location.replace("includes/triviawelcome.html");
-// }
+if(localStorage.getItem("currentUser") != null){
+    window.location.replace("includes/homepage.html");
+}
 
 let local = JSON.parse(localStorage.getItem("users"));
 console.log(local);
@@ -27,7 +23,8 @@ $("form").submit(function (e) {
                     {
                         "name": userName,
                         "highscore": 0,
-                        "allTimeScore": 0
+                        "correctAnswers":0,
+                        "gamesNum": 0
                     }
                 ]
         }
@@ -65,6 +62,6 @@ $("form").submit(function (e) {
         localStorage.setItem("users", JSON.stringify(local));
         localStorage.setItem("currentUser", userName);
     }
-    
-    window.location.href = "includes/triviawelcome.html";
+
+    window.location.href = "includes/homepage.html";
 });
