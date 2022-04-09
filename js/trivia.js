@@ -216,7 +216,7 @@ function timerFunc() {
     width -= 3.33;
     seconds -= 1;
     $(".progress-bar").css("width", width + "%");
-    $(".progress-bar").html('<i style="margin-right: 5px;" class="fa-regular fa-clock"></i>' + seconds);
+    $(".seconds").html(seconds);
 
     if (seconds <= 20) {
         $(".progress-bar").removeClass("bg-success").addClass("timer-warning");
@@ -250,7 +250,7 @@ function timeReset(secondsremain) {
     }
     $(".progress-bar").removeClass("timer-danger").removeClass("timer-warning").addClass("bg-success");
     $(".progress-bar").css("width", width + "%");
-    $(".progress-bar").html('<i style="margin-right: 5px;" class="fa-regular fa-clock"></i>' + seconds);
+    $(".seconds").html(seconds);
     timer = setInterval(timerFunc, 1000);
 }
 
