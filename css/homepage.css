@@ -16,17 +16,32 @@
     flex-direction: column;
 }
 
-.material-icons {
-    font-size: 48px;
+.icon-back-trophy {
+    color: #edc531;
 }
 
-.user-pic{
+.icon-back-check {
+    color: #40916c;
+}
+
+.icon-back-games {
+    color: #e07a5f;
+}
+
+
+.material-icons {
+    font-size: 48px;
+    filter: drop-shadow(0 0 0.75rem rgb(126, 126, 126));
+    color: #78290f;
+}
+
+.user-pic {
     display: flex;
     justify-content: center;
 }
 
 .stats {
-    align-items: end;
+    align-items: center;
 }
 
 

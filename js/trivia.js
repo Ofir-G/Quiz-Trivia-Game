@@ -113,7 +113,7 @@ getNewQuestion = () => {
 
         $(".choice").removeClass("disabled");
         $(".choice").attr("disabled", false);
-        $('.choice').addClass("button-28-hover");
+        $('.choice').addClass("choice-hover");
         $(".gameQ").removeClass("animate__bounceOutLeft");
         $(".gameQ").addClass("animate__bounceInRight");
         timeReset();
@@ -142,8 +142,9 @@ function correctAnswer(btn) {
 
     correctCounter++;
     console.log(btn);
-    btn.classList.remove("button-28-hover");
+    btn.classList.remove("choice-hover");
     btn.classList.add("correct");
+    correctPlay();
 
     $(".yes").removeClass("hide");
 
@@ -164,9 +165,11 @@ function correctAnswer(btn) {
 
 function incorrectAnswer(btn) {
 
-    btn.classList.remove("button-28-hover");
+    btn.classList.remove("choice-hover");
     btn.classList.add("incorrect");
     btn.classList.add("animate__headShake");
+    incorrectPlay();
+
 
     setTimeout(function () {
         findAnswer()
@@ -255,9 +258,8 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-
 $(".menu").click(function () {
-    window.location.href = "triviawelcome.html";
+    window.location.href = "welcome.html";
 });
 
 $(".play-again").click(function () {
@@ -375,3 +377,13 @@ function modal() {
     myModal.show();
 }
 
+
+function correctPlay() {
+    correctAudio = document.getElementById("correct-audio"); 
+    correctAudio.play();
+  }
+
+  function incorrectPlay() {
+    incorrectAudio = document.getElementById("incorrect-audio"); 
+    incorrectAudio.play();
+  }
