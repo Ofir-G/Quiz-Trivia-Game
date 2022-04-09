@@ -24,4 +24,6 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-var json = '{"3":"Apple", "2":"Banana", "1":"Orange"}';
+$(".btn-menu").click(function(){
+    window.location.href = "homepage.html";
+});

@@ -14,7 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&family=Sora:wght@300&display=swap"
         rel="stylesheet">
- <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Rubik&family=Secular+One&family=Sora:wght@400;600&family=Work+Sans:wght@700&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Raleway:wght@600&family=Roboto&family=Rubik&family=Secular+One&family=Sora:wght@400;600&family=Work+Sans:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/leaderboard.css">
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
@@ -25,97 +27,81 @@
 
     <div class="container">
         <div style="justify-content: start;" class="box">
-            <img style="width: 50%; margin-left: auto; margin-right: auto; display: block;" src="../images/logo.png"
-                alt="">
+            <img class="logo" src="../images/logo.png" alt="logo">
+            <div class="row leaderboard">
 
-            <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">All Time</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">Per Game</button>
-                </li>
-            </ul>
+                <div class="row highscoreTitle">
+                    <div class="col-4"><span>Rank</span></div>
+                    <div class="col-4"><span>Name</span></div>
+                    <div class="col-4"><span>Score</span></div>
+                </div>
 
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> -->
-                    <div class="leaderboard">
-
-                        <div class="row highscoreTitle">
-                            <div class="col-4"><span>Rank</span></div>
-                            <div class="col-4"><span>Name</span></div>
-                            <div class="col-4"><span>Score</span></div>
-                        </div>
-
-                        <div class="row highscore">
-                            <div class="col-4">
-                                <span class="rank">
-                                    <span class="fa-stack" style="vertical-align: top;">
-                                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                        <i class="fa-solid fa-1 fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </span>
-                            </div>
-                            <div class="col-4">
-                                <span class="name"></span>
-                            </div>
-                            <div class="col-4">
-                                <span class="score"></span>
-                            </div>
-                        </div>
-
-                        <div class="row highscore two">
-                            <div class="col-4"><span class="rank">
-                                    <span class="fa-stack" style="vertical-align: top;">
-                                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                        <i class="fa-solid fa-2 fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </span>
-                            </div>
-                            <div class="col-4">
-                                <span class="name"></span>
-                            </div>
-                            <div class="col-4">
-                                <span class="score"></span>
-                            </div>
-                        </div>
-                        
-                        <div class="row highscore three">
-                            <div class="col-4"><span class="rank"> <span class="fa-stack" style="vertical-align: top;">
-                                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                        <i class="fa-solid fa-3 fa-stack-1x fa-inverse"></i>
-                                    </span></span></div>
-                            <div class="col-4"><span class="name"></span></div>
-                            <div class="col-4"><span class="score"></span></div>
-                        </div>
-
-                        <div class="row highscore four">
-                            <div class="col-4"><span class="rank"> <span class="fa-stack" style="vertical-align: top;">
-                                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                        <i class="fa-solid fa-4 fa-stack-1x fa-inverse"></i>
-                                    </span></span> </div>
-                            <div class="col-4"><span class="name"></span></div>
-                            <div class="col-4"><span class="score"></span></div>
-                        </div>
-
-                        <div class="row highscore five">
-                            <div class="col-4"> <span class="rank"> <span class="fa-stack" style="vertical-align: top;">
-                                        <i class="fa-solid fa-circle fa-stack-2x"></i>
-                                        <i class="fa-solid fa-5 fa-stack-1x fa-inverse"></i>
-                                    </span></span> </div>
-                            <div class="col-4"><span class="name"></span></div>
-                            <div class="col-4"><span class="score"></span></div>
-                        </div>
+                <div class="row highscore">
+                    <div class="col-4">
+                        <span class="rank">
+                            <span class="fa-stack" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-1 fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-4">
+                        <span class="name"></span>
+                    </div>
+                    <div class="col-4">
+                        <span class="score"></span>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...
-                </div>
-                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...
-                </div>
-            <!-- </div> -->
 
+                <div class="row highscore two">
+                    <div class="col-4"><span class="rank">
+                            <span class="fa-stack" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-2 fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="col-4">
+                        <span class="name"></span>
+                    </div>
+                    <div class="col-4">
+                        <span class="score"></span>
+                    </div>
+                </div>
+
+                <div class="row highscore three">
+                    <div class="col-4"><span class="rank"> <span class="fa-stack" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-3 fa-stack-1x fa-inverse"></i>
+                            </span></span></div>
+                    <div class="col-4"><span class="name"></span></div>
+                    <div class="col-4"><span class="score"></span></div>
+                </div>
+
+                <div class="row highscore four">
+                    <div class="col-4"><span class="rank"> <span class="fa-stack" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-4 fa-stack-1x fa-inverse"></i>
+                            </span></span> </div>
+                    <div class="col-4"><span class="name"></span></div>
+                    <div class="col-4"><span class="score"></span></div>
+                </div>
+
+                <div class="row highscore five">
+                    <div class="col-4"> <span class="rank"> <span class="fa-stack" style="vertical-align: top;">
+                                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-solid fa-5 fa-stack-1x fa-inverse"></i>
+                            </span></span> </div>
+                    <div class="col-4"><span class="name"></span></div>
+                    <div class="col-4"><span class="score"></span></div>
+                </div>
+            </div>
+
+            <div class="btn row">
+                <button class="btn-menu mt-4 mb-3" type="submit">
+                    Back to Menu
+                </button>
+            </div>
         </div>
     </div>
 </body>
