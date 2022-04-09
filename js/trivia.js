@@ -259,11 +259,11 @@ function capitalizeFirstLetter(string) {
 }
 
 $(".menu").click(function () {
-    window.location.href = "welcome.html";
+    window.location.href = "homepage.html";
 });
 
 $(".play-again").click(function () {
-    window.location.href = "trivia.html";
+    window.location.reload();
 });
 
 $(".fifty").click(function () {
