@@ -41,3 +41,31 @@
 #nameHelp{
  color: white;
 }
+
+@media only screen and (max-width: 1000px) {
+
+  .logo{
+      width: 70%;
+  }
+
+  .btn-quiz{
+      font-size: 30px;
+      height: 80px;
+      width: 150px;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+  .logo{
+      width: 80%;
+  }
+
+  .btn-quiz{
+      font-size: 30px;
+      height: 60px;
+      width: 150px;
+  }
+
+}

@@ -24,7 +24,7 @@
     padding: inherit;
 }
 
-.fa-clock{
+.fa-clock {
     margin-right: 5px;
 }
 
@@ -57,11 +57,11 @@
     height: 20%
 }
 
-.btn-danger{
+.btn-danger {
     background-color: #9e2a2b;
 }
 
-.btn-danger:hover{
+.btn-danger:hover {
     background-color: #6a040f;
 }
 
@@ -107,7 +107,7 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.fa-clock{
+.fa-clock {
     margin-right: 5px;
 }
 
@@ -218,16 +218,16 @@ h1 {
     color: #118ab2;
 }
 
-.icon-back-off{
+.icon-back-off {
     color: #4a4e69;
 }
 
-.icon-off{
+.icon-off {
     color: #000000;
     transition: color 200ms;
 }
 
-.fa-stack:hover .icon-off{
+.fa-stack:hover .icon-off {
     color: white;
     cursor: pointer;
 }
@@ -244,7 +244,7 @@ h1 {
 
 }
 
-.disable-event{
+.disable-event {
     pointer-events: none;
 }
 
@@ -268,6 +268,66 @@ h1 {
     height: 3rem;
 }
 
-.summery{
+.summery {
     font-size: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .col-11 {
+        width: 90%;
+    }
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .box {
+        height: 1000px;
+    }
+
+    .responsive-logo {
+        display: none;
+    }
+
+    .user_data {
+        width: 50%;
+    }
+
+    .choice{
+        width: 60%;
+        margin: 0;
+    }
+    
+    .gameQ{
+        justify-content: center;
+    }
+
+}
+
+@media only screen and (max-width: 770px) {
+
+    .col-11 {
+        width: 85%;
+    }
+
+    #question{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+
+
+
+.col-11 {
+    width: 80%;
+}
+
+.responsive-hide{
+    display: none;
+}
+
 }

@@ -19,3 +19,16 @@
   .hide{
     display: none !important;
   }
+
+  @media only screen and (max-width: 1000px) {
+
+    .container{
+      padding: 0;
+    }
+
+    .box{
+      margin: 0;
+      border-radius: none;
+    }
+
+  }
