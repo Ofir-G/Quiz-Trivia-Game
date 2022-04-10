@@ -7,7 +7,8 @@ https://ofir-g.github.io/Quiz-Trivia-Game
 
 ### About
 - Web trivia game based on [OpenTDB](https://opentdb.com "OpenTBD") API.
-- **Not responsive** at this point - only desktop. Checked on Chrome & Firefox.
+- Checked on Chrome & Firefox.
+- It is responsive for mobile and lower resolutions.
 - No backend, just use of local browser storage.
 
 ### Some features
