@@ -112,7 +112,8 @@ $('.choice').click(function () {
     $(".choice").attr("disabled", true);
 
     stopTimer();
-    if (this.innerHTML == questions[qNumber].answer) {
+
+    if (decodeHtml(this.innerHTML) == decodeHtml(questions[qNumber].answer)) {
 
         correctAnswer(this);
     }
@@ -175,7 +176,7 @@ function findAnswer() {
     let answerChoice;
     choice = $.each(choices, function (index, choice) {
 
-        if (choice.innerHTML == questions[qNumber].answer) {
+        if (decodeHtml(choice.innerHTML) == decodeHtml(questions[qNumber].answer)) {
 
             choice.classList.add("correct");
             answerChoice = choice;
@@ -356,3 +357,9 @@ $(".turnoff").click(function () {
 $(".sure-yes").click(function () {
     endGame();
 });
+
+function decodeHtml(html) {
+    var txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}

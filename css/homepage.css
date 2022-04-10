@@ -144,35 +144,3 @@
     }
 
 }
-
-
-
-/* 
-.buy-info{
-    text-align: center;
-    margin: 0;
-}
-
-.toolbox-icons{
-    justify-content: center;
-}
-
-.icon-back {
-    color: #118ab2;
-    filter: drop-shadow(0 0 0.5rem #000000);
-    transition: color 200ms;
-}
-
-.icon-color {
-    color: black;
-}
-
-.disabled {
-    background-color: #495057;
-    color: #353535;
-    box-shadow: none;
-}
-
-.disabled-icon-inside {
-    color: rgb(92, 91, 91);
-} */
