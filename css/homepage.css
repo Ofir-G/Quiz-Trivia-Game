@@ -52,11 +52,11 @@
     align-items: center;
 }
 
-.logoff-btn{
+.logoff-btn {
     cursor: pointer;
 }
 
-.logoff-btn:hover{
+.logoff-btn:hover {
     color: #8d99ae;
     cursor: pointer;
 }
@@ -103,47 +103,48 @@
 @media only screen and (max-width: 1200px) {
 
     .profile-box {
-      width: 80%;
+        width: 80%;
     }
 
-  }
+}
 
-  @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
 
     .profile-box {
-      width: 80%;
+        width: 80%;
     }
 
-    .welcome{
-font-size: 20px;
-    }
-
-    .logoff-btn{
+    .welcome {
         font-size: 20px;
     }
 
-    .user-pic{
+    .logoff-btn {
+        font-size: 20px;
+    }
+
+    .user-pic {
         display: none;
     }
 
-    .profile-box-center{
+    .profile-box-center {
         justify-content: center;
     }
 
-    .logo{
+    .logo {
         display: none;
     }
 
-    .btn-menu{
+    .btn-menu {
         font-size: 25px;
         width: 70%;
     }
 
-    .responsive-img{
+    .responsive-img {
         width: auto;
     }
 
-  }
+}
+
 
 
 /* 

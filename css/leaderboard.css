@@ -15,7 +15,7 @@
     font-family: 'Sora', sans-serif;
 }
 
-.start{
+.start {
     justify-content: start;
 }
 
@@ -92,4 +92,57 @@
 
 .row {
     text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+
+    .highscore,
+    .highscoreTitle {
+        width: 50%;
+    }
+
+
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .logo {
+        width: 60%;
+    }
+
+    .highscore,
+    .highscoreTitle {
+        width: 60%;
+    }
+
+}
+
+@media only screen and (max-width: 770px) {
+    .logo {
+        width: 70%;
+    }
+
+    .highscore,
+    .highscoreTitle {
+        width: 70%;
+    }
+
+    .btn-menu {
+        font-size: 25px;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .highscore,
+    .highscoreTitle {
+        width: 90%;
+
+    }
+
+    .logo {
+        width: 90%;
+    }
+
 }

@@ -141,7 +141,7 @@ a {
 
 .welcome {
     font-family: 'Secular One', sans-serif;
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .all-cat {
@@ -230,6 +230,13 @@ a {
         display: none;
     }
 
+    .header-row {
+        height: 10%;
+    }
+    .center{
+        height: 90%;
+    }
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -242,7 +249,7 @@ a {
         width: 50%;
     }
 
-    .box {
+    .responsive-box {
         height: 1200px;
     }
 
