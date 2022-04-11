@@ -15,6 +15,7 @@ https://ofir-g.github.io/Quiz-Trivia-Game
 - User statistics in the home page
 - Highscores page
 - Help toolbox (50/50, pass, extra time)
+- When logged off, you can log back in using the same username.
 
 ### Technologies / Libraries / frameworks used
 - HTML, CSS, Javascript (jQuery)
