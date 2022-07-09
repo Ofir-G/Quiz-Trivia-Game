@@ -58,11 +58,6 @@ $(".amount").find("button").click(function () {
         chosenAmount = 20;
     }
 
-    if ((chosenCategory == "13" || chosenCategory == "25" || chosenCategory == "30") && chosenAmount == "random") {
-        console.log("if1");
-        chosenAmount = Math.floor(Math.random() * 20) + 1;
-    }
-
     localStorage.setItem("amount", chosenAmount)
 
     setTimeout(function () {

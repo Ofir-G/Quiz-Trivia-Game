@@ -1,4 +1,4 @@
-let question = document.getElementById("question")
+let question = document.getElementById("question");
 let choices = $(".choice");
 let amount = localStorage.getItem("amount");
 let category = localStorage.getItem("category");
@@ -25,7 +25,11 @@ startGame();
 
 function startGame() {
 
-    if (amount == "random") {
+    if ((category == "13" || category == "25" || category == "30") && amount == "random") {
+        amount = Math.floor(Math.random() * 20) + 1;
+    }
+
+    else if (amount == "random") {
         amount = Math.floor(Math.random() * 50) + 1;
     }
 

@@ -12,9 +12,10 @@ https://ofir-g.github.io/Quiz-Trivia-Game
 - No backend, just use of local browser storage.
 
 ### Some features
-- User statistics in the home page
+- User statistics in the home page (highest score, total corret answers, total games played)
 - Highscores page
 - Help toolbox (50/50, pass, extra time)
+- When logged off, you can log back in using the same username
 
 ### Technologies / Libraries / frameworks used
 - HTML, CSS, Javascript (jQuery)
