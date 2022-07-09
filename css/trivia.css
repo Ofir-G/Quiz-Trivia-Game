@@ -219,17 +219,21 @@ h1 {
 }
 
 .icon-back-off {
-    color: #4a4e69;
+    color: black;
 }
 
 .icon-off {
-    color: #000000;
+    color: #ffffff;
     transition: color 200ms;
 }
 
 .fa-stack:hover .icon-off {
     color: white;
     cursor: pointer;
+}
+
+.fa-stack:hover .icon-back-off  {
+    color: #4a4e69;
 }
 
 .icon-color {

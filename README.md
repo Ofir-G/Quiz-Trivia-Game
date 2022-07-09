@@ -1,7 +1,5 @@
 ## Quiz Site - Trivia Game
 
-Brought to you by Ofir's Quizzes... :smile:
-
 ### Live Site
 https://ofir-g.github.io/Quiz-Trivia-Game
 
